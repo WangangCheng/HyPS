@@ -18,9 +18,9 @@ Note: Our cuda version is 12.4, You can install pytorch from this [link](https:/
 
 2. Download our processed EADC data from Baidu Netdisk [Link](https://pan.baidu.com/s/1IRGgkp4BCqcgnv6Ftg0ZNQ?pwd=1111), Or you can also get the source data on the official website [EADC](http://adni.loni.usc.edu/).
 
-3. Download the LPBA40 dataset You can get it from this [Link](https://www.loni.usc.edu/research/atlas_downloads)
+3. Download the LPBA40 dataset You can get it from this [Link](https://www.loni.usc.edu/research/atlas_downloads).
 
-4. Download the HFH dataset You can gei it from this [Link](http://www.radiologyresearch.org/HippocampusSegmentationDatabase/)
+4. Download the HFH dataset You can gei it from this [Link](http://www.radiologyresearch.org/HippocampusSegmentationDatabase/).
 
 ## Data storage
 The data storage location should follow the following method
@@ -40,35 +40,46 @@ The data storage location should follow the following method
 Note:The label is not matched the image in th fllowing subjects:002_S_0938 (sub8), 007_S_1304 (sub35), 016_S_4121 (sub65), 029_S_4279 (sub85), 136_S_0429 (sub134).
 
 # Preprocessing
+Before preprocessing, please modify the `your_path`
 ```python
 cd data
 python preprocess.py
 ```
 After pre-process, sub{i}_data_f32b0.pkl will be generated in each sub{i} directory
 
-# Training
+# HyPS Training
 ```python
-cd LoRA-PT
-python LoRA-PT.py
+cd HyPS
+python train_HyPS.py
 ```
-After the training is completed, the trained weight file will be in `checkpointd/UNETR2024-XX-XX`
-# Inference
-Modify the time in test.py, which is the training date
+After the training is completed, the trained weight file will be in `checkpointd/SwinUNETR2024-XX-XX`
+
+# CPS Training
 ```python
-python test.py
+cd HyPS
+python trian_CPS.py
+```
+# HyPS Inference
+Modify the time in test_HyPS.py, which is the training date
+```python
+python test_HyPS.py
 ```
 The inference process loads the average of the last four epoch weights. If you don’t want this, you can set `multimodel=false` so that the inference process will load the weight file of the last epoch.
 
 The inference results will be saved in the `output/submission`
+# CPS Inference
+```python
+python test_CPS.py
+```
 # Evaluation
-Before evaluation, you should modify the your_path part in dice.py and hd95.py files
+Before evaluation, you should modify the `your_path` part in dice.py and hd95.py files
 ```python
 cd evaluation
 python dice.py
 python hd95.py
 ```
 # Acknowledgement
-If you find LoRA-PT useful for your research and applications, please cite using this BibTeX:
+If you find HyPS useful for your research and applications, please cite using this BibTeX:
 ```bibtex
 @ARTICLE{2024arXiv240711292H,
        author = {{He}, Guanghua and {Cheng}, Wangang and {Zhu}, Hancan and {Yu}, Gaohang},
