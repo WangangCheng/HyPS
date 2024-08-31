@@ -14,7 +14,7 @@ pip install -r requirements.txt
 Note: Our cuda version is 12.4, You can install pytorch from this [link](https://pytorch.org/).
 
 # Data downloading
-1. You can download the pre-trained weights at this [Link](https://drive.google.com/file/d/1Jtkw2epEYVknGOSGKG0xnQpg4sacEs8j/view?usp=sharing), You can download the pre-trained weights from this link and put them in the `checkpoint/UNETR2024-05-23`.
+1. You can download the pre-trained weights at this [Link](https://drive.google.com/file/d/1Jtkw2epEYVknGOSGKG0xnQpg4sacEs8j/view?usp=sharing), You can download the pre-trained weights from this link and put them in the `checkpoint/SwinUNETR2023-11-04`.
 
 2. Download our processed EADC data from Baidu Netdisk [Link](https://pan.baidu.com/s/1IRGgkp4BCqcgnv6Ftg0ZNQ?pwd=1111), Or you can also get the source data on the official website [EADC](http://adni.loni.usc.edu/).
 
