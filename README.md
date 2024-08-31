@@ -1,5 +1,6 @@
 # HyPS
 A Novel Hybrid Parameter-Efficient Fine-Tuning Approach for Hippocampus Segmentation and Alzheimer’s Disease Diagnosis
+
 ![HyPS](images/HyPS.drawio.png)
 # Contact
 if you have any question about our project, please feel free to contact us by email at wgcheng0@gmail.com
