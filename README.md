@@ -7,8 +7,8 @@ if you have any question about our project, please feel free to contact us by em
 # Environment install
 Clone this repository and navigate to the root directory of the project.
 ```python
-git clone https://github.com/WangangCheng/LoRA-PT.git
-cd LoRA-PT
+git clone https://github.com/WangangCheng/HyPS.git
+cd HyPS
 pip install -r requirements.txt
 ```
 Note: Our cuda version is 12.4, You can install pytorch from this [link](https://pytorch.org/).
@@ -48,20 +48,20 @@ After pre-process, sub{i}_data_f32b0.pkl will be generated in each sub{i} direct
 
 # Training
 ```python
-cd LoRA-PT
-python LoRA-PT.py
+cd HyPS
+python train_HyPS.py
 ```
-After the training is completed, the trained weight file will be in `checkpointd/UNETR2024-XX-XX`
+After the training is completed, the trained weight file will be in `checkpointd/SwinUNETR2024-XX-XX`
 # Inference
 Modify the time in test.py, which is the training date
 ```python
-python test.py
+python test_HyPS.py
 ```
 The inference process loads the average of the last four epoch weights. If you don’t want this, you can set `multimodel=false` so that the inference process will load the weight file of the last epoch.
 
 The inference results will be saved in the `output/submission`
 # Evaluation
-Before evaluation, you should modify the your_path part in dice.py and hd95.py files
+Before evaluation, you should modify the `your_path` part in dice.py and hd95.py files
 ```python
 cd evaluation
 python dice.py
