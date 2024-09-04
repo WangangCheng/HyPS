@@ -81,3 +81,11 @@ python hd95.py
 ```
 # Acknowledgement
 If you find HyPS useful for your research and applications, please cite using this BibTeX:
+```bibtex
+@ARTICLE{2024arXiv240711292H,
+       author = {{He}, Guanghua and {Cheng}, Wangang and {Zhu}, Hancan and {Yu}, Gaohang},
+       title = "{A Novel Hybrid Parameter-Efficient Fine-Tuning Approach for Hippocampus Segmentation and Alzheimer's Disease Diagnosis}",
+       journal = {arXiv preprint arXiv:2409.00884},
+       year = 2024
+}
+```
