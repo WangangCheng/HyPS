@@ -126,7 +126,7 @@ def main_worker():
     else:
         logging.info('re-training!!!')
 
-    if args.cla_dim > 0:
+    if args.cps_dim > 0:
         model = convert_linear_layer_to_cps(model, 'swinViT', args.cps_dim)
         only_optimize_cps_parameters(model.swinViT)
         freeze_parameters(model, param_names_to_freeze)
