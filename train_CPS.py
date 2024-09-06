@@ -16,7 +16,8 @@ from torch.utils.data import DataLoader
 from utils.tools import all_reduce_tensor
 from tensorboardX import SummaryWriter
 from torch import nn
-from models.UNETR import UNETR
+from models.SwinTransformer import *
+from models.SwinUNETR import SwinUNETR
 from CPS import *
 from tqdm import tqdm
 
