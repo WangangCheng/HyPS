@@ -69,15 +69,8 @@ def softmax_dice2(output,target):
     :param target: (b, d, h, w)
     :return: softmax dice loss
     '''
-    #target = (target>0).float()
-    #loss0 = Dice(output1[:, 0, ...], (target == 0).float())
-    #loss1 = Dice(output1[:, 1, ...], (target >= 1).float())
-    #loss_1 = 0.5*loss0 + 0.5*loss1
     loss00 = Dice(output[:, 0, ...], (target == 0 ).float())
     loss01 = Dice(output[:, 1, ...], (target == 1 ).float())
-    #loss02 = Dice(output[:, 2, ...], (target == 2 ).float())
-    #loss_2 = 0.2*loss00+0.2*loss01+loss02
-    #loss03 = Dice(output[:, 3, ...], (target == 3 ).float())
     loss = loss00 + loss01
    
     return loss,loss00.data, loss01.data
