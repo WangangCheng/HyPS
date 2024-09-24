@@ -83,7 +83,7 @@ python hd95.py
 If you find HyPS useful for your research and applications, please cite using this BibTeX:
 ```bibtex
 @ARTICLE{2024arXiv240711292H,
-       author = {{Cheng}, Wangang, and {He}, Guanghua and {Hu} Keli and {Fang} Mingyu and {Dong} Liang and {Li} Zhong and {Zhu}, Hancan},
+       author = {Cheng, Wangang and He, Guanghua and Hu, Keli and Fang, Mingyu and Dong, Liang and Li, Zhong and Zhu, Hancan},
        title = "{A Novel Hybrid Parameter-Efficient Fine-Tuning Approach for Hippocampus Segmentation and Alzheimer's Disease Diagnosis}",
        journal = {arXiv preprint arXiv:2409.00884},
        year = 2024
