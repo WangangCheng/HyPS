@@ -1,0 +1,37 @@
+# Copy to configs/local.yaml and set the data and checkpoint paths.
+
+paths:
+  data_root:            # Defaults to the split file's directory
+  split_file:           # See tools/make_split.py
+  pretrained:           # See pretrain_brats.py
+  output_dir: outputs/hyps
+  cache_dir: cache/hippocampus
+
+device:
+  gpu: 0                # Use cpu for a local smoke check
+  num_workers: 2
+  micro_batch: 2
+  amp: bf16             # bf16, fp16 or none. CPU requires none.
+
+model:
+  arch: swinunetr       # swinunetr or unetr
+  rank: 8
+  scale: 1.0
+  layers:               # Blank adapts all stages. Example: [layers3, layers4]
+  train: decoder        # decoder or head
+
+train:
+  epochs: 1000
+  batch_size: 4
+  lr: 1.0e-3
+  poly_power: 0.9
+  weight_decay: 1.0e-5
+  amsgrad: true
+  patch: 128
+  intensity: 0.1
+  seed: 1
+
+inference:
+  ensemble_last: 4
+  min_component: 1000
+  save_predictions: false
